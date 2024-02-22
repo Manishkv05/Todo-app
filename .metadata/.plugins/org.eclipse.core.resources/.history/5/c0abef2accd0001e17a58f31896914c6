@@ -1,0 +1,21 @@
+package com.codercamp.todoapp.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.codercamp.todoapp.domain.TodoItem;
+import com.codercamp.todoapp.repository.TodoRepository;
+
+@Service
+public class TodoServices {
+	
+	@Autowired
+	private TodoRepository todoRepo;
+		public List<TodoItem> fetchAllItmes() {
+			return todoRepo.fetchAllTodoItems();
+			
+		}
+
+}

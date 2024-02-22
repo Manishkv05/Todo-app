@@ -1,0 +1,23 @@
+package com.codercamp.todoapp.web;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+//https://localhost:8080
+@RestController
+public class TodoController {
+	
+	///front-end     java-server
+	//  httpREquest --->Controller --->Services ---> Repository
+	// front-end <---Controller <---Services <---
+	
+	
+	//Fetch all todo items (from database)
+	@GetMapping("/api/todoItems")
+	public ResponseEntity<?> fetchAllItmes (){
+		
+	}
+	
+
+}

@@ -1,0 +1,37 @@
+package com.codercamp.todoapp.web;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.codercamp.todoapp.domain.TodoItem;
+import com.codercamp.todoapp.services.TodoServices;
+
+//https://localhost:8080
+@RestController
+public class TodoController {
+	
+	///front-end     java-server
+	//  httpREquest --->Controller --->Services ---> Repository
+	// front-end <---Controller <---Services <---
+	@Autowired
+	private TodoServices todoService;
+	//Fetch all todo items (from database)
+	@GetMapping("/api/todoItems")
+	public ResponseEntity<?> fetchAllItmes (){
+		List<TodoItem> todoItems = todoService.fetchAllItmes();
+		
+		// return ResponseEntity.status.ok(todoItems); 
+		//we can use above shorthand form to return OK status
+		return ResponseEntity.status(HttpStatus.OK).body(todoItems);
+		
+		
+		
+	}
+	
+
+}

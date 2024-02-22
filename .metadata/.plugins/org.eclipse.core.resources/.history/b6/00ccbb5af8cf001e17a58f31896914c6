@@ -1,0 +1,15 @@
+package com.codercamp.todoapp.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.codercamp.todoapp.domain.TodoItem;
+
+@Service
+public class TodoServices {
+		public List<TodoItem> fetchAllItmes (){
+			
+		}
+
+}
