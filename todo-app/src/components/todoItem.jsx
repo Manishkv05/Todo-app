@@ -49,7 +49,8 @@ function deletetodoitem(){
         }
          
     })
-    .then((response) => {
+    .then((response) => response.json())
+        .then((data) => {
             emitDeleteTodoItem(todoItem);
     });
    
