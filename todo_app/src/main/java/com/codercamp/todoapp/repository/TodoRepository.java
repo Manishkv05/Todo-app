@@ -26,5 +26,16 @@ public class TodoRepository {
 	return todoItems;
 	}
 	
+ public  TodoItem save(TodoItem todoItem) {
+	 todoItem.setId(++idCounter);
+	 todoItems.add(todoItem);
+	 return todoItem;
+	 
+	 
+ }
 
+public void delet(Integer id) {
+	todoItems.stream().filter(todoItem -> !todoItem.getId().equals(id) );
+	
+}
 }

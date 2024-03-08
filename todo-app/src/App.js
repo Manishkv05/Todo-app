@@ -43,17 +43,41 @@ function App() {
 //     do item 2
 // 
 // something ? (do item 1): (do item 2)
+
+
+function createnewItem(){
+  fetch("http://localhost:8080/api/todoItems", {
+    headers: {
+      "content-type" : "application/json",
+    },
+    method: "POST",
+  }).then(response => response.json())
+  .then(aTodoItem =>{ 
+    console.log(aTodoItem)
+    setTodoItems([...todoItems, aTodoItem]);
+  });
+}
+function handleDeleteitem(item){
+  const updatedTodoitem = todoItems.filter((aTodoItem)=>aTodoItem.id !== item.id);
+  setTodoItems([...updatedTodoitem
+  ]);
+}
+
   return (
+    <>
+    <div>
+      <button onClick={createnewItem}>Add new todo-Item</button>
+    </div>
   <div>
     {todoItems
     ? todoItems.map((todoItem) => {
-       return <TodoItem key={todoItem.id} data={todoItem}/>;
+       return <TodoItem key={todoItem.id} data={todoItem} emitDeleteTodoItem={handleDeleteitem}/>;
     
   
-       
       })
     : "loading data...."}
     </div>
+    </>
   );
 }
 

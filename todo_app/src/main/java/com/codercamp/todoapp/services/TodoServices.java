@@ -32,6 +32,21 @@ public class TodoServices {
 				return item;
 			}
 			return null;
+		}
+		public TodoItem createNewTodoItem() {
+			// TODO Auto-generated method stub
+			TodoItem todoItem = new TodoItem();
+			todoItem.setIsDone(false);
+			todoItem = todoRepo.save(todoItem);
+			todoItem.setTask("Task#"+todoItem.getId());
+			return todoItem;
+			
+			
+		}
+		public TodoItem deleteTodoItem(Integer id) {
+			TodoItem todoItem = new TodoItem();
+			todoRepo.delet(id);
+			return null;
 		} 
 
 }
