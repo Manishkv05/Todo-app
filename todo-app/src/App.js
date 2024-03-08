@@ -59,7 +59,6 @@ function createnewItem(){
 }
 function handleDeleteitem(item){
   const updatedTodoitem = todoItems.filter((aTodoItem)=>aTodoItem.id !== item.id);
-  console.log("updated todoItems",updatedTodoitem);
   setTodoItems([...updatedTodoitem
   ]);
 }
