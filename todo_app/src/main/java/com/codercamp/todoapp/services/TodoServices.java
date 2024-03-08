@@ -44,8 +44,8 @@ public class TodoServices {
 			
 		}
 		public TodoItem deleteTodoItem(Integer id) {
-			TodoItem todoItem = new TodoItem();
-			todoRepo.delet(id);
+//			TodoItem todoItem = new TodoItem();
+			todoRepo.delete(id);
 			return null;
 		} 
 

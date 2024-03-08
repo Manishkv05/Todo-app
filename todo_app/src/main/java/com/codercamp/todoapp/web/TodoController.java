@@ -66,7 +66,7 @@ public class TodoController {
 }
 	@DeleteMapping("api/todoItems/{id}")
 	 public ResponseEntity<?> DelteTodoItem(@PathVariable Integer id){
-		 TodoItem todoitem = todoService.deleteTodoItem(id);
+		 todoService.deleteTodoItem(id);
 		 return ResponseEntity.ok("ok");
 		
 	}

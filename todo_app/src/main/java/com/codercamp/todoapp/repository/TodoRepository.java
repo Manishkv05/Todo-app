@@ -2,6 +2,7 @@ package com.codercamp.todoapp.repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -34,8 +35,8 @@ public class TodoRepository {
 	 
  }
 
-public void delet(Integer id) {
-	todoItems.stream().filter(todoItem -> !todoItem.getId().equals(id) );
+public void delete(Integer id) {
+	todoItems = todoItems.stream().filter(todoItem -> !todoItem.getId().equals(id)).collect(Collectors.toList());
 	
 }
 }
